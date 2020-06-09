@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="addTaskViewModel"
+            type="com.projects.android.presentation.viewModel.AddUserViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".userInterface.fragments.AddUserFragment"
+        android:background="@color/colorSecondaryLight">
+
+        <TextView
+            android:id="@+id/edit_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/view_drawable"
+            android:padding="6dp"
+            android:text="Name"
+            android:textColor="@color/colorPrimaryDark"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/edit_user_job_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/view_drawable"
+            android:padding="6dp"
+            android:text="Job Title"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintStart_toStartOf="@+id/edit_user_name"
+            app:layout_constraintTop_toBottomOf="@+id/edit_user_name" />
+
+        <EditText
+            android:id="@+id/edit_text_job_title_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/view_drawable"
+            android:cursorVisible="true"
+            android:hint="Write Your Job Title"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLength="20"
+            android:nextFocusForward="@id/edit_text_age_content"
+            android:padding="10dp"
+            android:textCursorDrawable="@null"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_user_job_title"
+            app:layout_constraintStart_toStartOf="@+id/edit_text_name_content"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_name_content"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <EditText
+            android:id="@+id/edit_text_name_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:background="@drawable/view_drawable"
+            android:hint="Write Your Name"
+            android:cursorVisible="true"
+            android:textCursorDrawable="@null"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLength="17"
+            android:padding="10dp"
+            android:nextFocusForward="@id/edit_text_job_title_content"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_user_name"
+            app:layout_constraintStart_toEndOf="@+id/edit_user_name"
+            app:layout_constraintTop_toTopOf="@+id/edit_user_name" />
+
+        <TextView
+            android:id="@+id/edit_user_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/view_drawable"
+            android:padding="6dp"
+            android:text="Age"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintStart_toStartOf="@+id/edit_user_name"
+            app:layout_constraintTop_toBottomOf="@+id/edit_user_job_title" />
+
+        <EditText
+            android:id="@+id/edit_text_age_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/view_drawable"
+            android:hint="Write Your Age"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:maxLength="2"
+            android:nextFocusForward="@id/add_user_button"
+            android:padding="10dp"
+            android:textCursorDrawable="@null"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_user_age"
+            app:layout_constraintStart_toStartOf="@+id/edit_text_job_title_content"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_job_title_content"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/edit_user_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/view_drawable"
+            android:padding="6dp"
+            android:text="Gender"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintStart_toStartOf="@+id/edit_user_name"
+            app:layout_constraintTop_toBottomOf="@+id/edit_user_age" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/cancel_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.484"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_user_gender"
+            app:layout_constraintVertical_bias="0.181">
+
+            <RadioButton
+                android:id="@+id/male_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/male_selector"
+                android:button="@android:color/transparent"
+                android:checked="true"
+                android:gravity="center"
+                android:padding="10dp" />
+
+            <RadioButton
+                android:id="@+id/female_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/female_selector"
+                android:button="@android:color/transparent"
+                android:gravity="center"
+                android:padding="10dp" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/add_user_button"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:text="add user"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="24dp"
+            android:text="Cancel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/add_user_button"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

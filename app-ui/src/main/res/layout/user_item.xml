@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewUser"
+            type="com.projects.android.assignmentapp.model.ViewUser" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:fitsSystemWindows="true"
+        android:padding="10dp"
+        android:background="@drawable/background_layout">
+
+
+        <TextView
+            android:id="@+id/user_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/view_drawable"
+            android:maxLines="1"
+            android:padding="4dp"
+            android:text="@{viewUser.name}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="user's name" />
+
+        <TextView
+            android:id="@+id/user_item_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="52dp"
+            android:background="@drawable/view_drawable"
+            android:maxLines="1"
+            android:padding="4dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="@color/colorPrimaryDark"
+            app:age="@{viewUser.age}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/user_item_name"
+            tools:text="27" />
+
+        <TextView
+            android:id="@+id/user_item_job_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/view_drawable"
+            android:maxLines="1"
+            android:padding="4dp"
+            android:text="@{viewUser.jobTitle}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintStart_toStartOf="@+id/user_item_name"
+            app:layout_constraintTop_toBottomOf="@+id/user_item_name"
+            tools:text="android developer" />
+
+        <ImageView
+            android:id="@+id/user_item_gender"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="4dp"
+            app:imageUrl="@{viewUser.gender}"
+            app:layout_constraintBottom_toBottomOf="@+id/user_item_job_title"
+            app:layout_constraintEnd_toEndOf="@+id/user_item_age"
+            app:layout_constraintStart_toStartOf="@+id/user_item_age"
+            app:layout_constraintTop_toBottomOf="@+id/user_item_age"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

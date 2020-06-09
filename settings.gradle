@@ -1,0 +1,2 @@
+include ':app-ui', ':cache', ':domain', ':data', ':presentation'
+rootProject.name='Assignment App'
